@@ -21,3 +21,9 @@ MonoBehaviour:
   _snakeData:
     _health: 4
     _maxHealth: 4
+  _blockFoodData:
+    _minValue: 3
+    _maxValue: 10
+  _blockHorizontalData:
+    _minValue: 1
+    _maxValue: 20

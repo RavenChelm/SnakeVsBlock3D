@@ -10,7 +10,7 @@ public abstract class BaseBlock : MonoBehaviour
 {
     public event Action<int> onHealthChanged;
     [SerializeField] private int _health;
-    public int Health => _health;
+    public int Health { get => _health; set => _health = value; }
     protected virtual void ChangeHealth(IHealth health) { }
     // private void Start()
     // {

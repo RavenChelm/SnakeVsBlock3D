@@ -16,12 +16,14 @@ public class BlockHorizontal : BaseBlock
 
     private void Start()
     {
-        HealthChanged(Random.Range(Data.MinValue, Data.MaxValue));
+        Health = Random.Range(Data.MinValue, Data.MaxValue);
+        HealthChanged(Health);
     }
     private int _progress;
     protected override void ChangeHealth(IHealth health)
     {
         _progress++;
+        Debug.Log(_progress);
         health.ChangeHealth(-1);
         HealthChanged(Health - _progress);
         if (_progress >= Health)

@@ -15,7 +15,8 @@ public class BlockFood : BaseBlock
 
     private void Start()
     {
-        HealthChanged(Random.Range(Data.MinValue, Data.MaxValue));
+        Health = Random.Range(Data.MinValue, Data.MaxValue);
+        HealthChanged(Health);
     }
     protected override void ChangeHealth(IHealth health)
     {
