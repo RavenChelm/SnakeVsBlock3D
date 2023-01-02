@@ -6,6 +6,10 @@ public class SnakeBodyData
 {
     [SerializeField] private float _partDiametr = 0.5f;
     public float PartDiametr => _partDiametr;
+    [SerializeField] private int _startPart = 4;
+    public int StartBlock { get => _startPart; set => _startPart = value; }
+    private int _currentPart = 1;
+    public int CurrentPart { get => _currentPart; set => _currentPart = value; }
 }
 public class SnakeBody : MonoBehaviour
 {
@@ -18,11 +22,11 @@ public class SnakeBody : MonoBehaviour
 
     private void Awake()
     {
+        Data.CurrentPart = 1;
         _snakeHead = transform;
         positions.Add(_snakeHead.position);
-        AddCircle();
-        AddCircle();
-        AddCircle();
+        AddPart(Data.StartBlock - 1);
+
     }
     private void Update()
     {
@@ -44,18 +48,28 @@ public class SnakeBody : MonoBehaviour
             snakePart[i].position = Vector3.Lerp(positions[i + 1], positions[i], distance / Data.PartDiametr);
         }
     }
-    public void AddCircle()
+    public void AddPart(int value)
     {
-        Transform part = Instantiate(_snakeTail, positions[positions.Count - 1], Quaternion.identity, transform);
-        snakePart.Add(part);
-        positions.Add(part.position);
+        Data.CurrentPart += value;
+        for (int i = 0; i < value; i++)
+        {
+            Transform part = Instantiate(_snakeTail, positions[positions.Count - 1], Quaternion.identity, transform);
+            snakePart.Add(part);
+            positions.Add(part.position);
+        }
     }
 
-    public void RemoveCircle()
+    public void RemovePart(int value)
     {
-        Destroy(snakePart[0].gameObject);
-        snakePart.RemoveAt(0);
-        positions.RemoveAt(1);
+        Debug.Log(value);
+        Data.CurrentPart += value;
+        if (Data.CurrentPart != 0)
+        {
+            Destroy(snakePart[snakePart.Count - 1].gameObject);
+            snakePart.RemoveAt(snakePart.Count - 1);
+            positions.RemoveAt(positions.Count - 1);
+        }
+
     }
 
 }

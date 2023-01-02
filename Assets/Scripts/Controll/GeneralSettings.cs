@@ -21,6 +21,11 @@ public class GeneralSettings : ScriptableObject
     public BlockFoodData BlockFoodData => _blockFoodData;
     [SerializeField] private BlockHorizontalData _blockHorizontalData;
     public BlockHorizontalData BlockHorizontalData => _blockHorizontalData;
+    [SerializeField] private GameData _gameData;
+    public GameData GameData => _gameData;
+    [SerializeField] private UIData _uiData;
+    public UIData UIData => _uiData;
+
     private static GeneralSettings LoadData()
     {
         return _instace = Resources.Load<GeneralSettings>("GeneralSettings");

@@ -11,9 +11,8 @@ GameObject:
   - component: {fileID: 3083351919025685049}
   - component: {fileID: 3083351919025685050}
   - component: {fileID: 3083351919025685051}
-  - component: {fileID: 3083351919025685052}
   m_Layer: 2
-  m_Name: SnakeBody
+  m_Name: SnakeTail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -84,16 +83,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &3083351919025685052
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3083351919025685054}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
