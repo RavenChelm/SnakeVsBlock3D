@@ -40,6 +40,7 @@ public class GameUI : MonoBehaviour
     private void OnEnable()
     {
         _snake.onHealthPlus += ScoreUp;
+        _snake.onHealthMinus += ScoreUp;
         DataUI.Score = 0;
 
         LevelNumber.SetText("Level: " + (DataGame.CurrentLevel + 1).ToString());
@@ -62,5 +63,7 @@ public class GameUI : MonoBehaviour
     private void OnDisable()
     {
         _snake.onHealthPlus -= ScoreUp;
+        _snake.onHealthMinus -= ScoreUp;
+
     }
 }
