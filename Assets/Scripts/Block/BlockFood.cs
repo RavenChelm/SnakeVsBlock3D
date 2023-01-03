@@ -12,7 +12,7 @@ public class BlockFoodData
 public class BlockFood : BaseBlock
 {
     private BlockFoodData Data => GeneralSettings.Instance.BlockFoodData;
-
+    [SerializeField] private GameObject particle;
     private void Start()
     {
         Health = Random.Range(Data.MinValue, Data.MaxValue);
@@ -20,8 +20,15 @@ public class BlockFood : BaseBlock
     }
     protected override void ChangeHealth(IHealth health)
     {
+        particle.SetActive(true);
         health.ChangeHealth(Health);
         HealthChanged(0);
+        StartCoroutine(Destroy());
+    }
+    IEnumerator Destroy()
+    {
+        gameObject.GetComponent<Collider>().enabled = false;
+        yield return new WaitForSeconds(0.5f);
         Destroy(gameObject);
     }
 }

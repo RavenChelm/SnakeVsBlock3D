@@ -12,18 +12,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 313dedd99013e47479887f4be9403b7c, type: 3}
   m_Name: GeneralSettings
   m_EditorClassIdentifier: 
+  _snakeData:
+    _startHealth: 4
   _snakeHeadMoveData:
     _speedX: 20
-    _speedZ: 1
+    _speedZ: 5
+  _snakeBodyData:
+    _partDiametr: 0.5
+    _startPart: 4
   _cameraFollowData:
     _lerpValue: 6
     _cameraOffset: 2
-  _snakeData:
-    _health: 4
-    _maxHealth: 4
   _blockFoodData:
-    _minValue: 3
-    _maxValue: 10
+    _minValue: 10
+    _maxValue: 32
   _blockHorizontalData:
     _minValue: 1
-    _maxValue: 20
+    _maxValue: 32
+    _repeat_time: 0.05
+    _curr_time: 0.04
+  _gameData:
+    _levelCount: 3
+  _uiData:
+    _score: 24
+    _bestScore: 0

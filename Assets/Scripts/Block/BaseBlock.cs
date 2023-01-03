@@ -28,8 +28,6 @@ public abstract class BaseBlock : MonoBehaviour
             ChangeHealth(health);
         }
     }
-
-
 }
 
 
