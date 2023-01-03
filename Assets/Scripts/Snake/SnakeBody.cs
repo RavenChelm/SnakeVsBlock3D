@@ -19,6 +19,9 @@ public class SnakeBody : MonoBehaviour
     public SnakeBodyData Data => GeneralSettings.Instance.SnakeBodyData;
     private List<Transform> snakePart = new List<Transform>();
     private List<Vector3> positions = new List<Vector3>();
+    [SerializeField] private AudioSource _audioSnakeEatApple;
+    [SerializeField] private AudioSource _audioSnakeHit;
+    private bool _checkEat = false;
 
     private void Awake()
     {
@@ -50,6 +53,12 @@ public class SnakeBody : MonoBehaviour
     }
     public void AddPart(int value)
     {
+        if (_checkEat == true)
+            _audioSnakeEatApple.Play();
+        else
+        {
+            _checkEat = true;
+        }
         Data.CurrentPart += value;
         for (int i = 0; i < value; i++)
         {
@@ -61,6 +70,7 @@ public class SnakeBody : MonoBehaviour
 
     public void RemovePart(int value)
     {
+        _audioSnakeHit.Play();
         Debug.Log(value);
         Data.CurrentPart += value;
         if (Data.CurrentPart != 0)

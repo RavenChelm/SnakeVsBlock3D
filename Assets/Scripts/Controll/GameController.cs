@@ -15,6 +15,8 @@ public class GameData
         get => _currentLevel;
         set { _currentLevel = value >= _levelCount ? 0 : value; }
     }
+    private bool _sound = true;
+    public bool Sound { get => _sound; set => _sound = value; }
 }
 
 public static class GameController
