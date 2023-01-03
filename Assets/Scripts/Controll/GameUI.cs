@@ -29,12 +29,10 @@ public class GameUI : MonoBehaviour
     private GameData DataGame => GeneralSettings.Instance.GameData;
 
     private Snake _snake;
-    private void Start()
-    {
-        DataGame.CurrentLevel = 0;
-    }
+
     private void Awake()
     {
+
         _snake = GetComponent<Snake>();
     }
     private void OnEnable()

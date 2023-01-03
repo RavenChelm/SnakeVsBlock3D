@@ -72,7 +72,6 @@ public class BlockHorizontal : BaseBlock
         float color = (Health - _progress) / (float)Data.MaxValue;
         _renderer.material.SetColor("_Color", _gradient.Evaluate(color));
         _renderer_particle.material = _renderer.sharedMaterial;
-        Debug.Log((color));
     }
     private void OnCollisionExit(Collision other)
     {

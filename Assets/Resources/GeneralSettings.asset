@@ -30,9 +30,10 @@ MonoBehaviour:
     _minValue: 1
     _maxValue: 32
     _repeat_time: 0.05
-    _curr_time: 0.03
+    _curr_time: 0.05
   _gameData:
     _levelCount: 3
+    _currentLevel: 0
   _uiData:
-    _score: 69
+    _score: 0
     _bestScore: 69

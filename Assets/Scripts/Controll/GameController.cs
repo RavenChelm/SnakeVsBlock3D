@@ -9,7 +9,7 @@ public class GameData
 {
     [SerializeField] private int _levelCount = 3;
     public int LevelCount { get => _levelCount; }
-    private int _currentLevel;
+    [SerializeField] private int _currentLevel;
     public int CurrentLevel
     {
         get => _currentLevel;
