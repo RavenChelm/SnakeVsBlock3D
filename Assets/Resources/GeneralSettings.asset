@@ -24,15 +24,15 @@ MonoBehaviour:
     _lerpValue: 6
     _cameraOffset: 2
   _blockFoodData:
-    _minValue: 10
-    _maxValue: 32
+    _minValue: 1
+    _maxValue: 16
   _blockHorizontalData:
     _minValue: 1
     _maxValue: 32
     _repeat_time: 0.05
-    _curr_time: 0.04
+    _curr_time: 0.03
   _gameData:
     _levelCount: 3
   _uiData:
-    _score: 24
-    _bestScore: 0
+    _score: 69
+    _bestScore: 69
