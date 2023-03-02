@@ -1,2 +1,5 @@
 # SnakeVsBlock3D
- Project for learning. Clone another game
+ Learn Project
+
+Made in the process of learning, portfolio project
+
